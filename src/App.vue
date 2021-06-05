@@ -1,5 +1,5 @@
 <template>
-  <div id="vue-header">    
+  <div id="vue-header-app">    
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>

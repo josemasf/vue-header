@@ -12,6 +12,7 @@
   "dependencies": {
     "@podium/browser": "^1.0.0-beta.2",
     "@podium/podlet": "^4.3.3",
+    "dotenv": "^9.0.0",
     "buefy": "^0.9.7",
     "core-js": "^3.6.5",
     "express": "^4.17.1",

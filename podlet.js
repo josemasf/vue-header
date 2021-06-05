@@ -10,11 +10,11 @@ dotenv.config({
   path: `process.env`
 });
 
-const port = process.env.PORT || 7100;
+const port = process.env.PORT || 7108;
 
 // Basic definition of the podlet
 const podlet = new Podlet({
-  name: "vueLogin", // required
+  name: "vueHeader", // required
   version: "0.1.0", // required
   pathname: "/", // required
   manifest: "/manifest.json", // optional, defaults to '/manifest.json'

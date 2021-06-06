@@ -1,5 +1,5 @@
 <template>
-  <div id="vue-header">    
+  <div id="vue-header-app">    
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style>
-#vue-header {
+#vue-header-app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

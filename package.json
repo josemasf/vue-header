@@ -10,7 +10,7 @@
     "start:dev": "set NODE_ENV=development && node podlet.js ",
     "deploy:release": "npm run release && npm run deploy",
     "deploy": "npm version patch && npm run build && npm run deploy:after ",
-    "deploy:after": "git add . && git commit -m\"Deploy to serve\" && git push origin master && git push && npm run deploy:end ",
+    "deploy:after": "firebase deploy && npm run deploy:end ",
     "deploy:end": "echo \"Deploy finsished\" "
   },
   "dependencies": {

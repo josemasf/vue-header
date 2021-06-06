@@ -7,7 +7,11 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "set NODE_ENV=production && node podlet.js ",
-    "start:dev": "set NODE_ENV=development && node podlet.js "
+    "start:dev": "set NODE_ENV=development && node podlet.js ",
+    "deploy:release": "npm run release && npm run deploy",
+    "deploy": "npm version patch && npm run build && npm run deploy:after ",
+    "deploy:after": "git add . && git commit -m\"Deploy to serve\" && git push origin master && git push && npm run deploy:end ",
+    "deploy:end": "echo \"Deploy finsished\" "
   },
   "dependencies": {
     "@podium/browser": "^1.0.0",

@@ -68,6 +68,7 @@ export default {
     login(){
       messageBus.publish('internalchannel', 'login', {message: 'open-login', from: 'vue header'});
       this.$emit('login','open-login')
+      console.log('emit event: open-login', 'login')
     }
   }
 }

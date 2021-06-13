@@ -42,7 +42,7 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-primary">
+                        <a class="button is-primary" @click="signUp">
                             <strong>Sign up</strong>
                         </a>
                         <a class="button is-light" id="login-btn" @click="login">
@@ -66,9 +66,14 @@ export default {
   },
   methods:{
     login(){
-      messageBus.publish('internalchannel', 'login', {message: 'open-login', from: 'vue header'});
+      messageBus.publish('internalchannel', 'login', {message: 'open-login', from: 'vue header', tab: 0});
       this.$emit('login','open-login')
       console.log('emit event: open-login', 'login')
+    },
+    signUp(){
+      messageBus.publish('internalchannel', 'login', {message: 'open-login', from: 'vue header', tab: 1});
+      this.$emit('login','open-signUp')
+      console.log('emit event: open-signUp', 'login')
     }
   }
 }

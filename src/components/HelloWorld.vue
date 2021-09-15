@@ -18,25 +18,20 @@
                 <a class="navbar-item" href="/">
                     Home
                 </a>
-
-                <a class="navbar-item" href="/documentation">
-                    Documentation
-                </a>
-
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
-                        More
+                        Categorias
                     </a>
 
                     <div class="navbar-dropdown">
-                        <a class="navbar-item" href="/about">
-                            About
-                        </a>                                            
-                        <a class="navbar-item" href="/ui-module">
-                            UI module
-                        </a>                        
+                        <a class="navbar-item" href="#" v-for="category in categories" :key="category" @click="categorySelected(category)">
+                            {{category}}
+                        </a>                                                                    
                     </div>
                 </div>
+                <a class="navbar-item" href="/hotels">
+                    Hotels
+                </a>
             </div>
 
             <div class="navbar-end">
@@ -64,7 +59,24 @@ export default {
   props: {
     msg: String
   },
+  data:()=> ({
+    categories: null,
+  }),
+  created(){
+    fetch('https://fakestoreapi.com/products/categories')
+            .then(res=>res.json())
+            .then(json=>this.categories = json)
+  },
   methods:{
+    categorySelected(category){
+      messageBus.publish('internalchannel', 'category', {message: `category-selected: ${category}`, from: 'vue header', category: category});
+      this.$emit('category','category-selected')
+      console.log('emit event: category-selected', `category: ${category}`)      
+
+      if(!window.location.pathname.toString().includes('categories')){
+          window.location.href = `http://localhost:7300/categories?category=${category}`
+      }
+    },
     login(){
       messageBus.publish('internalchannel', 'login', {message: 'open-login', from: 'vue header', tab: 0});
       this.$emit('login','open-login')

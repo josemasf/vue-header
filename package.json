@@ -14,22 +14,22 @@
     "deploy:end": "echo \"Deploy finsished\" "
   },
   "dependencies": {
-    "@podium/browser": "^1.0.0",
-    "@podium/podlet": "^4.3.3",
-    "buefy": "^0.9.7",
-    "core-js": "^3.6.5",
+    "@podium/browser": "^1.2.1",
+    "@podium/podlet": "^4.4.69",
+    "buefy": "^0.9.23",
+    "core-js": "^3.31.1",
     "dotenv": "^8.6.0",
-    "express": "^4.17.1",
-    "vue": "^2.6.11"
+    "express": "^4.18.2",
+    "vue": "^2.7.14"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
+    "@vue/cli-plugin-babel": "~4.5.19",
+    "@vue/cli-plugin-eslint": "~4.5.19",
+    "@vue/cli-service": "~4.5.19",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
+    "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.7.14"
   },
   "eslintConfig": {
     "root": true,
